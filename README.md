@@ -1,35 +1,46 @@
 # SuperFarmer
 
-## Opis
-SuperFarmer to gra konsolowa inspirowana popularną grą planszową. Gracze rywalizują, aby jako pierwsi zebrać pełen zestaw zwierząt. Gra zawiera mechanizmy takie jak rzuty kostką, wymiana zwierząt i unikanie ataków drapieżników.
+> Console-based C# implementation of the classic Polish board game **Super Farmer** (*Hodowla zwierzątek*).
 
-## Zasady Gry
-- **Rzuty kostką:** Gracze rzucają dwiema kostkami, aby zdecydować, które zwierzęta mogą zdobyć lub stracić w danej rundzie.
-- **Wymiana zwierząt:** Gracze mogą wymieniać zwierzęta  z "głównym stadem" na podstawie zdefiniowanych kursów wymiany.
-- **Ataki drapieżników:** Rzuty kostką mogą również skutkować atakami drapieżników, które mogą zmusić graczy do utraty zwierząt, chyba że są chronieni przez psy.
-- **Zwycięstwo:** Gra kończy się, gdy któryś z graczy uzbiera wszystkie wymagane zwierzęta.
+![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET_Core-512BD4?style=flat-square&logo=dotnet&logoColor=white)
+![Game](https://img.shields.io/badge/Type-Console_Game-orange?style=flat-square)
 
-## Wymagania
-- .NET Core 3.1 lub nowszy
-- Konsola/terminal do uruchomienia gry
+---
 
-## Instalacja i Uruchomienie
+## Game Overview
+
+SuperFarmer is a turn-based console strategy game where players compete to be the first to build a complete herd of animals (rabbit, sheep, pig, cow, and horse). The game models real board game mechanics including:
+- **Dice Rolls:** Determining animal reproduction or losses each round.
+- **Animal Trading:** Exchanging livestock with the main stock based on fixed exchange ratios.
+- **Predator Attacks:** Wolves and foxes attacking herds unless players are protected by small or big dogs.
+- **Victory Condition:** First player to acquire at least one of each main animal type wins.
+
+---
+
+## Project Architecture
+
+- `Game.cs` - Core game loop and round management.
+- `Player.cs` - Player state, inventory, and herd tracking.
+- `Animal.cs` - Animal domain models and value types.
+- `Die.cs` - 12-sided dice roll simulator with probabilities.
+- `TradeTable.cs` - Trading table enforcing animal exchange rates.
+- `AnimalStock.cs` - Main herd inventory pool management.
+- `GameConsole.cs` - CLI presentation and user input handler.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- [.NET Core 3.1+ / .NET 8 SDK](https://dotnet.microsoft.com/download)
+- Any terminal/console
+
+### Installation & Run
+
 ```bash
-git clone [url-do-repozytorium]
-cd SuperFarmer
+git clone https://github.com/Sornat11/SuperFarmer-CSharp-Game.git
+cd SuperFarmer-CSharp-Game
 dotnet run
 ```
-
-## Struktura Projektu
-- `Game.cs`: Główna klasa gry, zarządza logiką rozgrywki.
-- `Player.cs`: Reprezentuje gracza, zarządzanie stanem zwierząt gracza.
-- `Animal.cs`: Klasa dla zwierząt, zawiera informacje o typie i ilości.
-- `Die.cs`: Reprezentuje kostkę, zarządza rzutami.
-- `TradeTable.cs`: Zarządza wymianą zwierząt między graczami.
-- `AnimalStock.cs`: Zarządza "głównym stadem" zwierząt dostępnych do wymiany i zdobycia.
-- `GameConsole.cs`: Odpowiada za wyświetlanie informacji na konsoli i interakcję z użytkownikiem.
-
-## Autorzy
-- Jakub Sornat (jakubsornat2001@gmail.com)
-
-
